@@ -7,7 +7,7 @@
     <title>Add article</title>
 </head>
 <body>
-<h1>New Article</h1>
+<h1>Add New Line</h1>
 <div class="form">
     <form action="/article/add/" method="post">
         {% csrf_token %}
@@ -19,14 +19,18 @@
             <label for="">Text</label>
             <textarea name="text", id="text", cols="30", rows="10"></textarea>
         </div>
-{#        <div class="form_row">#}
-{#            <label for="status">Status</label>#}
-{#            <select name="status">#}
-{#                <option value="new">New</option>#}
-{#                <option value="in progress">In progress</option>#}
-{#                <option value="done">Done</option>#}
-{#            </select>#}
-{#        </div>#}
+        <div class="form_row">
+            <label for="status">Status</label>
+            <select name="status">
+                <option value="new" selected>New</option>
+                <option value="in progress">In progress</option>
+                <option value="done">Done</option>
+            </select>
+        </div>
+        <div>
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline" value="2023-08-06">
+        </div>
         <div class="form_row">
             <input type="submit">
         </div>

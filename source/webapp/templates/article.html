@@ -7,10 +7,13 @@
     <title>Article</title>
 </head>
 <body>
-    <h1>To Do</h1>
+    <h1>TO DO</h1>
     <p><a href="/">Home Page</a></p>
     <p>Title: {{ article.title }}</p>
     <p>Text: {{ article.text }}</p>
     <p>Status: {{ article.status }}</p>
+    {% if article.deadline %}
+        <p>Deadline: {{ article.deadline }}</p>
+    {% endif %}
 </body>
 </html>

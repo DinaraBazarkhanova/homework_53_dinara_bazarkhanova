@@ -11,7 +11,8 @@ def add_view(request: WSGIRequest):
     article_data = {
         'title': request.POST.get('title'),
         'text': request.POST.get('text'),
-        'author': request.POST.get('author'),
+        'status': request.POST.get('status'),
+        'deadline': request.POST.get('deadline'),
     }
     article = Article.objects.create(**article_data)
     return redirect(f'/article/?pk={article.pk}')
